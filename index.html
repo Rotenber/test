@@ -110,7 +110,7 @@
             </div>
         </div>
     </header>
-    <form id="gt" method="post" action="tickets.html">
+    <form id="gt" method="post" action="/en/tickets">
         <nav class="nav-steps fixed-bottom">
             <div class="container">
                 <div class="zone">
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-3 ticket-button mobile">
-                        <a class="button btn-arrow-right btn-sec" id="tickets-button">
+                        <a class="button btn-arrow-right btn-sec">
                             <span class="visible-xs-inline">2. </span> <span class="buttonText">Tickets</span> <span class="icons icon-arrow-right"></span>
                         </a>
                     </div>
@@ -170,14 +170,14 @@
                         <div class="date-soldout">
                             <div class="ui-state-disabled soldout">23</div> = sold out
                         </div>
-                        <div class="time-selection" style="display: none;">
+                        <div class="time-selection" style="display: block;">
                             <div class="loading">
                                 <p>
                                     <strong>Times will be loaded...</strong>
                                 </p>
                                 <img src="img/loading.gif" alt="Loading" />
                             </div>
-                            <div class="timeslots" style="display: none;">
+                            <div class="timeslots" style="display: block;">
                                 <p>
                                     At what time would you like to visit?
                                     <span id="zomer-vrijdag">A free introduction on Van Gogh and his life is available at 7:30 pm.</span>
@@ -235,7 +235,7 @@
 
                                 </div>
                                 <div class="ticket-button-submit hide-mobile">
-                                    <a class="button btn-arrow-right btn-sec ticket-button-submit" href="tickets.html">
+                                    <a class="button btn-arrow-right btn-sec ticket-button-submit">
                                         <span class="visible-xs-inline">2. </span> <span class="buttonText">Tickets</span> <span class="icons icon-arrow-right"></span>
                                     </a>
                                 </div>
@@ -245,7 +245,7 @@
                 </div>
 
             </div>
-        </section> 
+        </section>
 
         <section class="ticket-info">
             <div class="container">
@@ -330,21 +330,11 @@
                     return [disabledDates.indexOf(string) == -1];
                 },
                 onSelect: function(dateText, inst) {
-                    $(".time-selection").show();
-                    $(".timeslots").show();
-                    $('#timeslotsTable').DataTable();
                     onDatepickerOption(dateText);
                 }
             });
-
-            $(".ticket-button-submit, #tickets-button").click(function(e) {
-                e.preventDefault();
-                window.location.href = "tickets.html";
-            });
+            $('#timeslotsTable').DataTable();
         });
     </script>
 </body>
 </html>
-
-
-
