@@ -129,9 +129,15 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-3 ticket-button mobile">
-                        <a class="button btn-arrow-right btn-sec ticket-button-submit">
-                            <span class="visible-xs-inline">2. </span> <span class="buttonText">Tickets</span> <span class="icons icon-arrow-right"></span>
-                        </a>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a class="button btn-arrow-right btn-sec ticket-button-submit" href="tickets.html">
+                                        <span class="visible-xs-inline">2. </span> <span class="buttonText">Tickets</span> <span class="icons icon-arrow-right"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -298,9 +304,6 @@
                 onSelect: function(dateText, inst) {
                     $(".time-selection").show(); // Show time selection on date selection
                 }
-            });
-            $(".ticket-button-submit").on("click", function() {
-                window.location.href = "tickets.html"; // Redirect to tickets.html on button click
             });
         });
     </script>
